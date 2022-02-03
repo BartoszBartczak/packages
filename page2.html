@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>Button</title>
+</head>
+<body>
+    <div class="title">ENVELO</div>
+    <div class="text">
+       Możesz mieć swoją przesyłkę w kilka sekund<br>
+       Rozpocznij klikając w przycisk
+    </div>
+    <form class="form">
+      <div>Numer telefonu</div>
+      <input type="number" 
+      oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" 
+      class="input" id="phoneNumber" maxlength="9" min="111111111">
+      <div>Numer paczki</div>
+      <input type="number" 
+      oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+      class="input" id="packageNumber" maxlength="4" min="1111">
+    </form>
+    <button class="button" onclick="checkNumber()">
+        Odbierz paczkę
+    </button>
+    <div id="myModal" class="modal">
+      <div class="title">ENVELO</div>
+      <div class="text">
+         Możesz mieć swoją przesyłkę w kilka sekund<br>
+         Rozpocznij klikając w przycisk
+      </div>
+      <div id="taken">
+         <h1>Paczka odebrana!</h1> 
+      </div>
+      <div id="youDidIt">
+         <h4>Zrobiłeś to w 10 sekund! Co jeszcze możemy dla ciebie zrobić?</h6>
+      </div>
+      <div class="end">
+        <button class="endButton" onclick="window.location.href='index.html'">To wszystko na dziś</button>
+        <button class="endButton" onclick="window.location.href='page2.html'">Odbierz kolejną paczkę</button>
+      </div>
+    </div>
+    
+
+    <script src="main.js"></script>
+</body>
+</html>
